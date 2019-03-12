@@ -322,6 +322,11 @@ class CardStack extends React.Component {
               // Reject touches that started in the middle of the screen
               return false;
             }
+            const currentDragDistanceDx = gesture['dx'];
+            const currentDragDistanceDy = gesture['dy'];
+            if(Math.abs(currentDragDistanceDx)<=Math.abs(currentDragDistanceDy)*2) {
+              return false;
+            }
 
             const hasDraggedEnough =
               Math.abs(currentDragDistance) > RESPOND_THRESHOLD;
