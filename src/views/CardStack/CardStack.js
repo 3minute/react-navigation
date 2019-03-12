@@ -324,7 +324,7 @@ class CardStack extends React.Component {
             }
             const currentDragDistanceDx = gesture['dx'];
             const currentDragDistanceDy = gesture['dy'];
-            if(Math.abs(currentDragDistanceDx)<=Math.abs(currentDragDistanceDy)*2) {
+            if(Math.abs(currentDragDistanceDx)<=Math.abs(currentDragDistanceDy)*2 && !isVertical) {
               return false;
             }
 
